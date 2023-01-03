@@ -1,3 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
   background: #03203c;
+  color: #12b0e8;
+}
+
+.add_new_button_mobile_only {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  background: #03203c;
+  z-index: 3;
+  width: 100%;
+  padding: 1rem;
 }
