@@ -25,11 +25,46 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="imageURL" class="from-label">Image URL</label>
+            <input type="url" name="" class="form-control" placeholder="http://www.example.com/images" id="imageURL">
+          </div>
+          <!-- Title -->
+          <div class="mb-3">
+            <label for="taskTitle" class="from-label">Task Title</label>
+            <input type="text" name="" class="form-control" placeholder="Learn backend" id="imageURL" required>
+          </div>
+          <!-- Tags -->
+          <div class="mb-3">
+            <label for="tags" class="from-label">Task Type</label>
+            <input type="text" name="" class="form-control" placeholder="Work..." id="tags" required>
+          </div>
+          <!-- Description -->
+          <div class="mb-3">
+            <label for="taskDescription" class="from-label">Task Type</label>
+            <textarea class="form-control" placeholder="Explain what will happen" id="taskDescription"  rows="4"></textarea>
+          </div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" type="button" class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="showTask" tabindex="-1" aria-labelledby="showTaskLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="showTaskLabel">Task Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> 
+      <div class="modal-body task_modal_body">
         ...
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
       </div>
     </div>
   </div>
