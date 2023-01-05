@@ -15,7 +15,7 @@
 <title>Task_app</title>
 </head>
 
-<body>
+<body onload="loadInitalData()">
   <div class="add_new_button_mobile_only d-md-none ">
     <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addNewModal" type="submit">Add Task
       <i class="fas fa-plus"></i>
@@ -31,7 +31,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form onsubmit="return false">
             <div class="mb-3">
               <label for="imageURL" class="from-label">Image URL</label>
               <input type="url" name="" class="form-control" placeholder="http://www.example.com/images" id="imageURL">
@@ -39,7 +39,7 @@
             <!-- Title -->
             <div class="mb-3">
               <label for="taskTitle" class="from-label">Task Title</label>
-              <input type="text" name="" class="form-control" placeholder="Learn backend" id="imageURL" required>
+              <input type="text" name="" class="form-control" placeholder="Learn backend" id="taskTitle" required>
             </div>
             <!-- Tags -->
             <div class="mb-3">
@@ -53,7 +53,7 @@
                 rows="4"></textarea>
             </div>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" type="button" class="btn btn-primary">Save changes</button>
+            <button type="submit" type="button" class="btn btn-primary" onclick="handelSubmit()">Save changes divesh</button>
           </form>
         </div>
       </div>
