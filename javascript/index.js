@@ -12,7 +12,7 @@ const htmlTaskContent = ({ id, title, description, type, url }) => `
           <button type='button' class='btn btn-outline-info mr-2' name=${id}>
             <i class='fas fa-pencil-alt' name=${id}></i>
           </button>
-          <button type='button' class='btn btn-outline-danger mr-2' name=${id}>
+          <button type='button' class='btn btn-outline-danger mr-2' name=${id} onclick="deleteTask.apply(this,arguments)">
             <i class='fas fa-trash-alt' name=${id}></i>
           </button>
         </div>
@@ -114,3 +114,21 @@ const openTask = (e) => {
   const getTask = state.taskList.find(({ id }) => id === e.target.id)
   taskModal.innerHTML = htmlModalContent(getTask)
 }
+
+const deleteTask = (e) => {
+  if (!e) e = window.event;
+  const targetID = e.target.getAttribute("name");
+  const type = e.target.tagName;
+  const removeTask = state.taskList.filter(({ id }) => id !== targetID);
+  state.taskList = removeTask;
+  updateLocalStorage();
+
+  if (type === "BUTTON") {
+    return e.target.parentNode.parentNode.parentNode.parentNode.removeChild(
+      e.target.parentNode.parentNode.parentNode
+    )
+  }
+  return e.target.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(
+    e.target.parentNode.parentNode.parentNode.parentNode
+  )
+};
