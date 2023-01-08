@@ -202,3 +202,21 @@ const saveEdit = (e) => {
   submitButton.setAttribute("data-bs-target", "#showTask");
   submitButton.innerHTML = "Open Task";
 };
+
+
+const searchTask = (e) => {
+  if (!e) window.event;
+
+  while (taskContents.firstChild) {
+    taskContents.removeChild(taskContents.firstChild);
+  }
+  const resultData = state.taskList.filter(({ title }) => {
+    return title.toLowerCase().includes(e.target.value.toLowerCase());
+  });
+
+  console.log(resultData);
+
+  resultData.map((cardData) => {
+    taskContents.insertAdjacentHTML("beforeend", htmlTaskContent(cardData));
+  });
+};
